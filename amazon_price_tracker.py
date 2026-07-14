@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 
 
 
-verbose = False #False for verbose mode disabled, True for active
+verbose = False #False for verbose mode disabled, True for active - this mode simply provides more details regarding some operations, but that's all
 MAX_TRIES = 15 #maximum amount of times the script tries to inquire Amazon for a particular link - feel free to change this to whatever value you like
 PORT = 3000 #port on which to open the dashboard
 URL = f"http://localhost:{PORT}" #url to the dashboard
@@ -368,6 +368,7 @@ def main():
                     INSERT INTO history (product_id, price, timestamp)
                     VALUES (?, ?, ?)
                     """, (row[0], price[0], datetime.datetime.now()))
+                conn.commit()
                 if(row[2] > price[0]):
                     print(colored("New lowest price ever for " + str(title) + "!", "green", attrs=['bold']))
                     cursor.execute("""

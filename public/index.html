@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <title>Amazon Price Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      display: flex;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Left and right panels */
+    #left-panel,
+    #right-panel {
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #left-panel {
+      width: 30%;
+      border-right: 1px solid #ccc;
+      background-color: #ff8b0f;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    #right-panel {
+      width: 70%;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* List styling */
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    li:hover {
+      background-color: #e0e0e0;
+    }
+
+    li.selected {
+      background-color: #007BFF;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="left-panel">
+    <ul id="title-list">
+      <li>Loading titles...</li>
+    </ul>
+  </div>
+
+  <div id="right-panel">
+    <div id="price-list">
+      Select a title to see details
+    </div>
+  </div>
+
+  <script type="module">
+    import { loadElements, renderElements } from './main.js';
+
+    const titleListEl = document.getElementById('title-list');
+    const priceListEl = document.getElementById('price-list');
+
+    loadElements().then(data => renderElements(data, titleListEl, priceListEl));
+  </script>
+</body>
+
+</html>
