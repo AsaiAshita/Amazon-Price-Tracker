@@ -12,7 +12,7 @@ This script comes bundled with various features, such as:
 - A local price chart of every product in the database
 - The ability to print such a price chart directly in the terminal (and the ability to tinker with how the plots look)...
 - ...or of looking at more information using the bundled dashboard! 
-![Example of how the dashboard looks]()
+![Example of how the dashboard looks](./dashboard_example.png)
 # Requirements
 Simply install the dependencies contained in `requirements.txt` by using pip: 
 ```
