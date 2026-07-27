@@ -44,3 +44,10 @@ where:
 ```
 If executed with no arguments, the script updates the price of the items stored in the local database
 
+# Deleting the database
+If you want to delete the entire database, simply delete the .db file contained in the /data folder (which the script will automatically create whenever it is first launched).
+
+# List of TODO
+- At the moment, the script only takes the price Amazon shows on the page, instead of the entire price list. This can lead to situations where no price is found, even though there is a vendor selling the item.
+- Following the above, the script makes no difference between used and new prices. This is something that may be worked upon in the future
+- Ulterior features may be included, if they are useful to the objectives of this project
