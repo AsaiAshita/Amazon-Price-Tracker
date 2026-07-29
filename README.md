@@ -42,6 +42,13 @@ where:
 <file.txt> = a .txt file containing, for each line, an Amazon link pointing to the item you want the price of
 <string> = a string of text
 ```
+Here are some example usages:
+```
+python3 amazon_price_tracker.py -l amazon_links.txt #takes the links in amazon_links.txt and adds them to the db
+python3 amazon_price_tracker.py #updates the prices for the items in the db
+python3 amazon_price_tracker -plt monster #lets you select any item in the db containing "monster" in its title and print its price history in the terminal
+python3 amazon_price_tracker <link> #adds <link> to the db
+```
 If executed with no arguments, the script updates the price of the items stored in the local database
 Moreover, if you want to customize the plots printed in the terminal, you can do so by modifying lines 24-27 of the script, while setting the value at line 21 (`customized_plots`) to `True`. Please refer to [Plotext's documentation](https://github.com/piccolomo/plotext/blob/master/readme/aspect.md#colors) for how you can customize your plots.
 
@@ -51,4 +58,5 @@ If you want to delete the entire database, simply delete the .db file contained 
 # List of TODO
 - At the moment, the script only takes the price Amazon shows on the page, instead of the entire price list. This can lead to situations where no price is found, even though there is a vendor selling the item.
 - Following the above, the script makes no difference between used and new prices. This is something that may be worked upon in the future
+- At this point in time, the script does not work on Windows (and maybe Mac, though I have not tested this), due to the use of termcolor, which is unavailable for Windows. Hence, such a version of the script may be provided in the future.
 - Ulterior features may be included, if they are useful to the objectives of this project
