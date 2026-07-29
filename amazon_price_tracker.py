@@ -536,7 +536,7 @@ def main():
                         plt.ticks_color(ticks_color)
 
                     plt.xticks(x, labels)
-                    plt.title("Price History for " + result_list[menu_entry_index].lstrip())
+                    plt.title("Price History for: " + (result_list[menu_entry_index].lstrip() if len(result_list[menu_entry_index].lstrip())<50 else result_list[menu_entry_index].lstrip()[:50]+ "..."))
                     start = max(0, len(x) - 20)
                     end = len(x)
 
