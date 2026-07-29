@@ -46,8 +46,8 @@ Here are some example usages:
 ```
 python3 amazon_price_tracker.py -l amazon_links.txt #takes the links in amazon_links.txt and adds them to the db
 python3 amazon_price_tracker.py #updates the prices for the items in the db
-python3 amazon_price_tracker -plt monster #lets you select any item in the db containing "monster" in its title and print its price history in the terminal
-python3 amazon_price_tracker <link> #adds <link> to the db
+python3 amazon_price_tracker.py -plt monster #lets you select any item in the db containing "monster" in its title and print its price history in the terminal
+python3 amazon_price_tracker.py <link> #adds <link> to the db
 ```
 If executed with no arguments, the script updates the price of the items stored in the local database
 Moreover, if you want to customize the plots printed in the terminal, you can do so by modifying lines 24-27 of the script, while setting the value at line 21 (`customized_plots`) to `True`. Please refer to [Plotext's documentation](https://github.com/piccolomo/plotext/blob/master/readme/aspect.md#colors) for how you can customize your plots.
