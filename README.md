@@ -11,6 +11,7 @@ This script comes bundled with various features, such as:
 - Automatically updates the lowest ever seen price whenever you execute the script, telling you precisely when such value was seen
 - A local price chart of every product in the database
 - The ability to print such a price chart directly in the terminal (and the ability to tinker with how the plots look)...
+![Example of how plot in the terminal looks](./terminal_plot_example.png)
 - ...or of looking at more information using the bundled dashboard! 
 ![Example of how the dashboard looks](./dashboard_example.png)
 # Requirements
