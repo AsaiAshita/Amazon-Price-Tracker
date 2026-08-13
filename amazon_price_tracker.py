@@ -11,6 +11,7 @@ import os
 import time
 import plotext as plt #dependance
 from urllib.parse import urlparse
+from pathlib import Path
 
 
 
@@ -157,7 +158,12 @@ def main():
     #we get the number of arguments given to the script
     n = len(sys.argv)
     #we connect to sqlite, create a database and create a table called products, if it doesn't already exist
-    conn = sqlite3.connect("./data/amazon_price_history.db")  # creates file if it doesn't exist
+    #conn = sqlite3.connect("./data/amazon_price_history.db")  # creates file if it doesn't exist -> wrongly thought it also created the folder: it doesn't...
+    BASE_DIR = Path(__file__).resolve().parent
+    db_path = BASE_DIR / "data" / "amazon_price_history.db"
+    if not os.path.exists(db_path):
+        db_path.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS products (
