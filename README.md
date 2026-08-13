@@ -39,7 +39,7 @@ where:
 -web = launches the dashboard in your default browser. NOTE: when you are done, remember to click Ctrl + C to shut down the local server
 -plt = fetches all items that have <string> in their name and gives the user the ability to select for which to print the price history plot in the terminal
 -h = prints how you can use the script
-<link> = an Amazon link - the less tracking clutter, the better
+<link> = an Amazon link - the less tracking clutter, the better (which includes basically anything after the ? following the product id in the link)
 <file.txt> = a .txt file containing, for each line, an Amazon link pointing to the item you want the price of
 <string> = a string of text
 ```
