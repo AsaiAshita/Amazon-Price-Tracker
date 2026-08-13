@@ -52,7 +52,17 @@ python3 amazon_price_tracker.py <link> #adds <link> to the db
 ```
 If executed with no arguments, the script updates the price of the items stored in the local database.
 
-Moreover, if you want to customize the plots printed in the terminal, you can do so by modifying lines 24-27 of the script, while setting the value at line 21 (`customized_plots`) to `True`. Please refer to [Plotext's documentation](https://github.com/piccolomo/plotext/blob/master/readme/aspect.md#colors) for how you can customize your plots.
+Moreover, if you want to customize the plots printed in the terminal, you can do so by modifying lines 24-27 of the script, while setting the value at line 21 (`customized_plots`) to `True`. Below, we provide the specific variables you need to tinker with in order to change how the plots look. Please refer to [Plotext's documentation](https://github.com/piccolomo/plotext/blob/master/readme/aspect.md#colors) for how you can customize your plots.
+
+```
+customized_plot = True #if enabled, it allows you to customize the plotting in the terminal with the colours of your choice
+#refer to https://github.com/piccolomo/plotext/blob/master/readme/aspect.md#colors for customization
+DEFAULT_THEME = "elegant"
+ticks_color = "black" 
+canvas_color = "orange+"
+axis_color = 110 
+marker_color = 126
+```
 
 # Deleting the database
 If you want to delete the entire database, simply delete the .db file contained in the /data folder (which the script will automatically create whenever it is first launched).
