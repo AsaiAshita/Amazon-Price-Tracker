@@ -67,8 +67,37 @@ marker_color = 126
 # Deleting the database
 If you want to delete the entire database, simply delete the .db file contained in the /data folder (which the script will automatically create whenever it is first launched).
 
+# Scheduling the script - LINUX ONLY
+If you do not want to manually launch the script every day, you can automate such process by scheduling its execution using cron. In order to do this, first verify if cron is already installed on your device by executing the following:
+```
+crontab -h
+```
+If cron is installed, it should return an usage error. Otherwise, you can install cron as follows:
+```
+sudo apt install cron
+```
+Then, in order to schedule the script, type the following command:
+```
+crontab -e
+```
+It will now ask you what editor you want to use. I suggest selecting nano, due to it providing a file with the instructions on how to set up a cron job. Otherwise, you can select whatever editor you have set up on your computer.
+
+Then, you will need to schedule the execution of the script. In order to do this, you can copy the following, assuming you want the script to be executed every day at 18:00 
+```
+0 18 * * * python3 path/to/script.py
+```
+If you instead want to modify the scheduling to suit it to your needs, please refer to the instructions provided by cron in the file. If you want, instead, to modify the behaviour of the script, please refer to the Usage section. After this, save the file and exit the editor. Now the cron job will be set up to run at the next possible occurrence, based on the provided time.
+
+If you want to remove this scheduling, you can proceed as above and delete the content of the file, or you can do the following:
+```
+crontab -r
+```
+
+Many thanks to the [following conversation](https://askubuntu.com/questions/1200232/task-scheduler-in-ubuntu) for helping with this section.
+
 # List of TODO
 - At the moment, the script only takes the price Amazon shows on the page, instead of the entire price list. This can lead to situations where no price is found, even though there is a vendor selling the item.
 - Following the above, the script makes no difference between used and new prices. This is something that may be worked upon in the future
 - At this point in time, the script does not work on Windows (and maybe Mac, though I have not tested this), due to the use of termcolor, which is unavailable for Windows. Hence, such a version of the script may be provided in the future.
+- If a Windows-based version of the script will be created, then we will also need to figure out how to successfully schedule the script, as cron is unavailable for windows
 - Ulterior features may be included, if they are useful to the objectives of this project
