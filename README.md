@@ -86,6 +86,11 @@ Then, you will need to schedule the execution of the script. In order to do this
 ```
 0 18 * * * python3 path/to/script.py
 ```
+If you also want to get the output of the file, you can append or redirect the output of the script to a file as follows:
+```
+0 18 * * * python3 path/to/script.py >> path/to/file #append
+0 18 * * * python3 path/to/script.py > path/to/file #redirect
+```
 If you instead want to modify the scheduling to suit it to your needs, please refer to the instructions provided by cron in the file. If you want, instead, to modify the behaviour of the script, please refer to the Usage section. After this, save the file and exit the editor. Now the cron job will be set up to run at the next possible occurrence, based on the provided time.
 
 If you want to remove this scheduling, you can proceed as above and delete the content of the file, or you can do the following:
@@ -100,4 +105,5 @@ Many thanks to the [following conversation](https://askubuntu.com/questions/1200
 - Following the above, the script makes no difference between used and new prices. This is something that may be worked upon in the future
 - At this point in time, the script does not work on Windows (and maybe Mac, though I have not tested this), due to the use of termcolor, which is unavailable for Windows. Hence, such a version of the script may be provided in the future.
 - If a Windows-based version of the script will be created, then we will also need to figure out how to successfully schedule the script, as cron is unavailable there.
+- Modify the script to include a minimal print version to use for scheduling
 - Ulterior features may be included, if they are useful to the objectives of this project
