@@ -5,11 +5,11 @@ This script was made to automatically manage the process of checking prices for 
 
 # Features
 This script comes bundled with various features, such as:
-- A local database storing many relevant details of each product
+- A local database storing many relevant details for each product
 - The possibility of providing a file with multiple Amazon links to be inserted in the database, instead of having to execute the script individually for each one of them
 - A series of commands to actively manage your local database
 - Automatically updates the lowest ever seen price whenever you execute the script, telling you precisely when such value was seen
-- A local price chart of every product in the database
+- A local price chart for every product in the database
 - The ability to print such a price chart directly in the terminal (and the ability to tinker with how the plots look)...
 ![Example of how plot in the terminal looks](./terminal_plot_example.png)
 - ...or of looking at more information using the bundled dashboard! 
@@ -50,7 +50,8 @@ python3 amazon_price_tracker.py #updates the prices for the items in the db
 python3 amazon_price_tracker.py -plt monster #lets you select any item in the db containing "monster" in its title and print its price history in the terminal
 python3 amazon_price_tracker.py <link> #adds <link> to the db
 ```
-If executed with no arguments, the script updates the price of the items stored in the local database
+If executed with no arguments, the script updates the price of the items stored in the local database.
+
 Moreover, if you want to customize the plots printed in the terminal, you can do so by modifying lines 24-27 of the script, while setting the value at line 21 (`customized_plots`) to `True`. Please refer to [Plotext's documentation](https://github.com/piccolomo/plotext/blob/master/readme/aspect.md#colors) for how you can customize your plots.
 
 # Deleting the database
