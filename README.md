@@ -84,14 +84,16 @@ It will now ask you what editor you want to use. I suggest selecting nano, due t
 
 Then, you will need to schedule the execution of the script. In order to do this, you can copy the following, assuming you want the script to be executed every day at 18:00 
 ```
-0 18 * * * python3 path/to/script.py
+0 18 * * * /usr/bin/python3 "path/to/script.py"
 ```
 If you also want to get the output of the file, you can append or redirect it to a file as follows:
 ```
-0 18 * * * python3 path/to/script.py >> path/to/file #append
-0 18 * * * python3 path/to/script.py > path/to/file #redirect
+0 18 * * * /usr/bin/python3 "path/to/script.py" >> path/to/file #append
+0 18 * * * /usr/bin/python3 "path/to/script.py" > path/to/file #redirect
 ```
 If you instead want to modify the scheduling to suit it to your needs, please refer to the instructions provided by cron in the file. If you want, instead, to modify the behaviour of the script, please refer to the Usage section. After this, save the file and exit the editor. Now the cron job will be set up to run at the next possible occurrence, based on the provided time.
+
+Note that /usr/bin/python3 depends on where your local installation of Python is located. It may be enough to call python3/python, depending on your version, but providing the path is guaranteed to make the script be correctly executed.
 
 If you want to remove this scheduling, you can proceed as above and delete the content of the file, or you can do the following:
 ```
