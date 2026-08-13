@@ -95,7 +95,7 @@ crontab -r
 
 Many thanks to the [following conversation](https://askubuntu.com/questions/1200232/task-scheduler-in-ubuntu) for helping with this section.
 
-# List of TODO
+# List of TODOs
 - At the moment, the script only takes the price Amazon shows on the page, instead of the entire price list. This can lead to situations where no price is found, even though there is a vendor selling the item.
 - Following the above, the script makes no difference between used and new prices. This is something that may be worked upon in the future
 - At this point in time, the script does not work on Windows (and maybe Mac, though I have not tested this), due to the use of termcolor, which is unavailable for Windows. Hence, such a version of the script may be provided in the future.
