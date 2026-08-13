@@ -86,7 +86,7 @@ Then, you will need to schedule the execution of the script. In order to do this
 ```
 0 18 * * * python3 path/to/script.py
 ```
-If you also want to get the output of the file, you can append or redirect the output of the script to a file as follows:
+If you also want to get the output of the file, you can append or redirect it to a file as follows:
 ```
 0 18 * * * python3 path/to/script.py >> path/to/file #append
 0 18 * * * python3 path/to/script.py > path/to/file #redirect
