@@ -12,6 +12,8 @@ import time
 import plotext as plt #dependance
 from urllib.parse import urlparse
 from pathlib import Path
+from colorama import just_fix_windows_console
+from sys import platform
 
 
 
@@ -155,6 +157,10 @@ def fetch_image_from_amazon(clean_url, fetch_link=True, response=None):
         return "None"
 
 def main():
+    #if OS is windows, we use Colorama to enable termcolor colored prints
+    #this makes the script be able to be launched also on Windows systems.
+    if platform == "win32":
+        just_fix_windows_console()
     #we get the number of arguments given to the script
     n = len(sys.argv)
     #we connect to sqlite, create a database and create a table called products, if it doesn't already exist

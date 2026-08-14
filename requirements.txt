@@ -3,3 +3,4 @@ beautifulsoup4
 termcolor
 simple-term-menu
 plotext
+colorama=0.4.6
